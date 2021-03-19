@@ -1,0 +1,87 @@
+[database]
+user = "postgres"
+password = "supersecretpass"
+host = "localhost"
+port = 5432
+name = "postgres"
+sslmode = "disable"
+migration-source = "file://script/database-migration"
+log-mode = true
+
+[server]
+ip = "127.0.0.1"
+port = 8080
+frontend-endpoint = "http://localhost:4200/"
+user-confirmation-page = "verify-profile?token="
+forgot-password-page = "change-password"
+forgot-password-query   = "?token=%s&email=%s"
+release-mode = false
+log-level = "info"
+two-factor-enabled = false
+
+[rpc]
+protocol = "tcp"
+host = "127.0.0.1:9090"
+    [rpc.whitelist]
+    protocol = "tcp"
+    address = "127.0.0.1:9091"
+    [rpc.chb]
+    protocol = "tcp"
+    address = "127.0.0.1:9092"
+    
+[c0rs]
+allowed-origins = [
+    "http://localhost:4200"
+]
+allowed-headers = [
+    "Content-Type",
+    "Authorization",
+    "Origin",
+    "2fa"
+]
+allowed-methods = [
+    "GET",
+    "POST",
+    "PATCH"
+]
+allow-all = false
+max-age = "12h"
+
+[token]
+expiration-in-days = 3
+
+[jwt]
+realm = "realm"
+key = "key"
+timeout = "1h"
+max-refresh = "1h"
+algorithm = "HS256"
+
+[template]
+api-key = "m8LCi0EqNFhqnyg7lBjVmw"
+from-email = "test@skycoin.net"
+from-name = "skycoin.net"
+
+disable-email-sending = true
+send-email-after-import = false
+
+sign-up-content = "Click on the link to confirm your account: "
+sign-up-subject = "Please confirm your registration"
+
+forgot-password-content = "Click on the link to reset your password: "
+forgot-password-subject = "Skycoin user portal password reset"
+
+password-changed-content = "Your password for skycoin portal was changed. If you are not the one who changed it, please reach out to us at contact@skycoin.net"
+password-changed-subject = "Skycoin user portal password change"
+
+skycoin-address-changed-content = "Your Skycoin address was changed"
+skycoin-address-changed-subject = "Skycoin address changed"
+
+user-status-changed-to-admin-content = "Your skycoin account status was changed to administrator"
+user-status-changed-to-admin-subject = "Skycoin user status change"
+
+account-changed-to-disabled-content = "Your skycoin account status has been disabled"
+account-changed-to-disabled-subject = "Account disabled"
+
+account-created-after-import-content = "New account on Skywire is waiting for you to claim miners. Click on the following URL and change your password. "
+account-created-after-import-subject = "Hey! We have new account waiting for you!"

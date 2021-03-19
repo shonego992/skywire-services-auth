@@ -1,0 +1,64 @@
+<mat-toolbar color="primary">
+  <div fxHide.gt-xs>
+    <button mat-icon-button (click)="onToggleSidenav()"><mat-icon>menu</mat-icon></button>
+  </div>
+  <div>
+    <span class="title">{{'COMMON.APP_TITLE' | translate}}</span>
+  </div>
+  <div class="spacer"></div>
+  <div class="user" *ngIf="user" [matMenuTriggerFor]="userMenu">
+    <span>{{ user.username }}</span>
+    <mat-icon>keyboard_arrow_down</mat-icon>
+  </div>
+  <mat-menu #userMenu="matMenu">
+    <button
+      routerLink="/account-info"
+      mat-menu-item
+    >
+      {{'HEADER.ACCOUNT_INFO' | translate}}
+    </button>
+    <button
+      routerLink="/changing-password"
+      mat-menu-item
+    >
+      {{'HEADER.CHANGING_PASSWORD' | translate}}
+    </button>
+    <button
+      routerLink="/setup-otp"
+      mat-menu-item
+    >
+      {{'HEADER.SETUP_OTP' | translate}}
+    </button>
+    <button
+      (click)="onLogout()"
+      mat-menu-item
+    >
+      {{'HEADER.LOGOUT' | translate}}
+    </button>
+  </mat-menu>
+<!--  <div fxHide.gt-xs>-->
+<!--    <button mat-icon-button (click)="onToggleSidenav()"><mat-icon>menu</mat-icon></button>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <a routerLink="/account-info"><img src="/assets/images/logo-white.png" class="logoHeder" fxShow fxHide.lt-sm="true"></a>-->
+<!--  </div>-->
+<!--  <div class="" fxFlex fxLayout fxLayoutAlign="flex-start" fxHide.xs>-->
+<!--    <ul fxLayout class="navigation-items" fxLayoutGap="10px">-->
+<!--      <li *ngIf="!(adminClaims.can_create || adminClaims.can_disable)"><a routerLink="/account-info">{{ 'HEADER.ACCOUNT_INFO' | translate }}</a></li>-->
+<!--      <li *ngIf="!(adminClaims.can_create || adminClaims.can_disable)"><a routerLink="/changing-password">{{ 'HEADER.CHANGING_PASSWORD' | translate }}</a></li>-->
+<!--      <li><a routerLink="/setup-otp">{{ 'HEADER.SETUP_OTP' | translate }}</a></li>-->
+
+<!--      &lt;!&ndash;tables&ndash;&gt;-->
+<!--      <li *ngIf="adminClaims.can_create || adminClaims.can_disable"><a routerLink="/admins-list">{{ 'HEADER.ADMINS_LIST' | translate }}</a></li>-->
+<!--      <li *ngIf="adminClaims.can_create || adminClaims.can_disable"><a routerLink="/users-list">{{ 'HEADER.USERS_LIST' | translate }}</a></li>-->
+
+<!--    </ul>-->
+<!--  </div>-->
+<!--  <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>-->
+<!--    <ul fxLayout class="navigation-items" fxLayoutGap="10px">-->
+<!--      <li *ngIf="!isAuth"><a routerLink="/signup">{{'HEADER.SIGN_UP' | translate}}</a></li>-->
+<!--      <li *ngIf="!isAuth"><a routerLink="/">{{'HEADER.LOGIN' | translate}}</a></li>-->
+<!--      <li *ngIf="isAuth"><a style="cursor: pointer;" (click)="onLogout()">{{'HEADER.LOGOUT' | translate}}</a></li>-->
+<!--    </ul>-->
+<!--  </div>-->
+</mat-toolbar>

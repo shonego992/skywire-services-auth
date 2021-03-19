@@ -1,0 +1,23 @@
+<div class="card" *ngIf="isDataAvailable">
+  <div class="header">
+    <div class="title">{{ admin?.username }}</div>
+  </div>
+  <div class="body">
+    <form (ngSubmit)="submit" #formControl="ngForm">
+      <div class="form">
+        <mat-form-field>
+          <mat-select name="rights" placeholder="{{'USER.ADMIN_RIGHTS' | translate}}" multiple [(ngModel)]="rights" [compareWith]="compareWithFunc">
+            <mat-option *ngFor="let right of admin.rights" [value]="right.Name">
+              {{right.Label}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row">
+        <button class="btn" [type]="submit" [disabled]="!formControl.valid" (click)="saveEdit()">{{'MODALS.SAVE' | translate}}</button>
+        <button class="btn transparent" (click)="onCancel()" tabindex="-1">{{'MODALS.CANCEL' | translate}}</button>
+      </div>
+    </form>
+  </div>
+</div>

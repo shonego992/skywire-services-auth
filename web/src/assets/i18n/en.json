@@ -1,0 +1,106 @@
+{
+  "WELCOME": {
+    "WELCOME": "Welcome"
+  },
+  "COMMON": {
+    "APP_TITLE": "Skywire Authentication",
+    "IS_ACTIVE": "Is Active",
+    "YES": "Yes",
+    "NO": "No"
+  },
+  "HEADER": {
+    "SIGN_UP": "Create account",
+    "LOGIN": "Login",
+    "USER_PROFILE": "User Profile",
+    "ADMIN_PROFILE": "Admin Profile",
+    "LOGOUT": "Logout",
+    "ACCOUNT_INFO": "Account Info",
+    "CHANGING_PASSWORD": "Change Password",
+    "ADMINS_LIST": "Admins List",
+    "USERS_LIST": "Users List",
+    "SETUP_OTP": "Setup 2 Factor Auth",
+    "HOME": "Home" 
+  },
+  "USER": {
+    "USER_EMAIL": "Email",
+    "SKYCOIN_ADDRESS": "Skycoin address",
+    "GENERATE_API_KEY": "Generate API key",
+    "UPDATE_YOUR_SKYCOIN_ADDRESS": "Update Your Skycoin Address",
+    "DELETE_API_KEY": "Delete API Key",
+    "API_KEYS": "API Keys",
+    "NEW_SKYCOIN_ADDRESS": "Your New Skycoin Address",
+    "INVALID_EMAIL": "Invalid or missing email.",
+    "FORGOT_PASSWORD":"Reset password",
+    "NO_ACCOUNT": "Don't have account?",
+    "HAVE_ACCOUNT": "If you already have account, please",
+    "TERMS_CONDITIONS": "Agree to Terms and Conditions.",
+    "REQUIRED_ADDRESS": "Your address is required.",
+    "USERNAME": "Username",
+    "2FA": "2FA",
+    "NO_RESULTS": "No results",
+    "PASSWORD": "Password",
+    "OLD_PASSWORD": "Old Password",
+    "NEW_PASSWORD": "New Password",
+    "CONFIRM_PASSWORD": "Confirm Password",
+    "PASSWORD_CHARACTERS": "Should be at least 8 characters long.",
+    "PASSWORD_REQUIRED": "Password is required",
+    "PASSWORD_NO_MATCH": "Password does not match.",
+    "CONFIRM_PASSWORD_REQUIRED": "Confirm password is required.",
+    "OLD_PASSWORD_REQUIRED": "Old password is required.",
+    "PASSWORD_IS_CHANGED": "Your password has been changed!",
+    "SUCCESS": "Success!",
+    "ENTER_MAIL": "Please enter your email",
+    "ENTER_NEW_PASSWORD": "Enter your new password.",
+    "NOTE": "Note: ",
+    "SESSION_EXPIRY_ON_PASS_CHANGE": "You will be logged out of the current session upon password change.",
+    "VERIFY_MESSAGE": "  Please verify your account to access all features. If you want to resend the activation mail, click this button",
+    "CREATE_ADMIN": {
+      "TITLE": "Create New Administrator Account",
+      "SAVE": "Save",
+      "CANCEL": "Cancel"
+    },
+    "FILTER_ADMIN": "Filter Admins",
+    "CREATE_NEW_ADMIN": "Create New Admin:",
+    "ADMIN_PERMISSIONS": "Admins Permissions",
+    "ADMIN_EMAIL": "Enter Admins Email",
+    "FILTER_USER": "Filter Users",
+    "ADMIN_RIGHTS": "Admin rights",
+    "ADDRESS": "Your Skycoin address",
+    "ACCOUNT_OK": "Your account looks good!"
+  },
+  "MODALS": {
+    "DELETE_API_KEY": "Are you sure you want to delete API key?",
+    "DISABLE_ACCOUNT": "Are you sure you want to disable this account?",
+    "ARE_YOU_SURE": "Are you sure?",
+    "DELETE": "Delete",
+    "CANCEL": "Cancel",
+    "DISABLE": "Disable",
+    "CONFIRM": "Confirm",
+    "SAVE": "Save",
+    "EMAIL": "User email:",
+    "STATUS": "User status:"
+  },
+  "BUTTONS": {
+    "RESEND": "Resend",
+    "SUBMIT": "Submit",
+    "UPLOAD_FILES": "Upload files",
+    "SEND": "Send",
+    "CHANGE_PASSWORD": "Change Password",
+    "REGISTER": "Register",
+    "RESET_PASSWORD": "Reset password"
+  },
+  "ERRORS": {
+    "MANDATORY_FIELD": "Mandatory field",
+    "VALID_MAIL": "Please enter a valid email.",
+    "MISSING_EMAIL": "Invalid or missing email.",
+    "NOT_FOUND": "404 page not found"
+  },
+  "OTP": {
+    "TITLE": "Two-Factor Authentication",
+    "SETUP": "Scan the QR image in the Authenticator and enter the pass code below to attach it to your account.",
+    "TOKEN": "Pass code",
+    "CONFIRM": "Confirm",
+    "ALREADY_SET": "Two factor authentication already set. To disable it enter your password, token, and click disable",
+    "DISABLE": "DISABLE"
+  }
+}

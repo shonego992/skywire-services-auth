@@ -1,0 +1,10 @@
+<div class="container-fluid">
+  <h3 mat-dialog-title>{{'MODALS.CONFIRM' | translate}}</h3>
+  <div mat-dialog-content>
+    <p>{{'MODALS.DISABLE_ACCOUNT' | translate}}</p>
+  </div>
+  <div mat-dialog-actions>
+    <button class="btn danger" [mat-dialog-close]="1" (click)="confirmDisable()">{{'MODALS.DISABLE' | translate}}</button>
+    <button class="btn transparent" (click)="onNotClick()" tabindex="-1">{{'MODALS.CANCEL' | translate}}</button>
+  </div>
+</div>

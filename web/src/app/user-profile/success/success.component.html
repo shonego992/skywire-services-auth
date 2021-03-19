@@ -1,0 +1,19 @@
+<section fxLayout="row">
+  <div class="img-layout" fxFlex="67" fxHide.xs="true" fxLayoutAlign="center center">
+    <div fxLayoutAlign="center center">
+      <img src="/assets/images/logo.png" alt="" [ngStyle.xs]="{'width.px': 200}">
+    </div>
+  </div>
+  <div class="form-layout" fxFlex="33" fxFlex.lt-md="100" fxLayout="column" fxLayoutAlign="space-around center">
+    <div class="">
+      <h1 class="app_title">{{'COMMON.APP_TITLE' | translate}}</h1>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <h2>{{'USER.SUCCESS' | translate}}</h2>
+      <h4>{{'USER.PASSWORD_IS_CHANGED' | translate}}</h4>
+    </div>
+    <div class="">
+      <button mat-raised-button color="primary" routerLink="/">{{'HEADER.LOGIN' | translate}}</button>
+    </div>
+  </div>
+</section>

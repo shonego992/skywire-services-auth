@@ -1,0 +1,16 @@
+<div class="card" *ngIf="getUser()">
+  <div class="header">
+    <div class="title">{{ getUser().username }}</div>
+  </div>
+  <div class="body">
+    <section *ngIf="getUser() ? !getUser().status : true">
+      <div class="info-message">
+        {{'USER.VERIFY_MESSAGE' | translate }}
+      </div>
+      <button class="btn" (click)="resendMail()">{{'BUTTONS.RESEND' | translate}}</button>
+    </section>
+    <section *ngIf="getUser() && getUser().status">
+      {{'USER.ACCOUNT_OK' | translate }}
+    </section>
+  </div>
+</div>

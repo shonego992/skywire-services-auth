@@ -1,0 +1,21 @@
+<section class="create-user">
+  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" [formGroup]="createUser" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input
+      type="email"
+      matInput
+      placeholder="{{'USER.ADMIN_EMAIL' | translate}}"
+      formControlName="email">
+      <mat-hint>{{'ERRORS.VALID_MAIL' | translate}}</mat-hint>
+      <mat-error>{{'ERRORS.MISSING_EMAIL' | translate}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+    <mat-select placeholder="{{'USER.ADMIN_PERMISSIONS' | translate}}" [formControl]="permissions" multiple>
+      <mat-option *ngFor="let permission of permissionsList" [value]="permission">
+        {{permission}}
+      </mat-option>
+    </mat-select>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary" [disabled]="createUser.invalid">{{'BUTTONS.SUBMIT' | translate}}</button>
+  </form>
+</section>

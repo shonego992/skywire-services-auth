@@ -1,0 +1,26 @@
+@import 'variables';
+
+.card {
+  background: $white;
+
+  .header {
+    height: 60px;
+    box-shadow: $shadow-light;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+
+    .title {
+      font-size: 14px;
+      color: $dark;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+
+  .body {
+    padding: 20px;
+    box-shadow: $shadow-light;
+  }
+}

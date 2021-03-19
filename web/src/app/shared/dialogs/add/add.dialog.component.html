@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <h3 mat-dialog-title>{{'USER.CREATE_ADMIN.TITLE' | translate}}</h3>
+
+  <form mat-dialog-content (ngSubmit)="submit" #formControl="ngForm">
+    <div class="form">
+      <mat-form-field color="accent">
+        <input matInput #input class="form-control" placeholder="{{'USER.USERNAME' | translate}}" [(ngModel)]="data.username" name="username" required email>
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <input matInput #input class="form-control" placeholder="{{'USER.PASSWORD' | translate}}" [(ngModel)]="data.password" name="password"
+          required>
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+
+  <div mat-dialog-actions>
+    <button class="btn" [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="confirmAdd()">{{'USER.CREATE_ADMIN.SAVE' | translate}}</button>
+    <button class="btn transparent" (click)="onNoClick()" tabindex="-1">{{'USER.CREATE_ADMIN.CANCEL' | translate}}</button>
+  </div>
+</div>

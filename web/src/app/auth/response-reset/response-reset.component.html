@@ -1,0 +1,26 @@
+<div class="full-background">
+  <div class="mini-container">
+    <div class="centered">
+      <img src="/assets/images/logo.png" alt="Skycoin">
+      <h1>{{'COMMON.APP_TITLE' | translate}}</h1>
+    </div>
+
+    <form class="dark-form" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" [formGroup]="responseReset" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <span matPrefix><mat-icon>vpn_key</mat-icon></span>
+        <input type="password" matInput placeholder="{{'USER.NEW_PASSWORD' | translate}}" name="password" formControlName="password">
+        <mat-error *ngIf="responseReset.controls.password.errors?.required && responseReset.controls.password.touched">{{'USER.PASSWORD_REQUIRED' | translate}}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <span matPrefix><mat-icon>vpn_key</mat-icon></span>
+        <input type="password" matInput placeholder="{{'USER.CONFIRM_PASSWORD' | translate}}" name="confirmPassword" formControlName="confirmPassword">
+        <mat-error *ngIf="responseReset.errors?.doesMatchPassword">{{'USER.PASSWORD_NO_MATCH' | translate}}</mat-error>
+        <mat-error *ngIf="responseReset.controls.confirmPassword.errors?.required && responseReset.controls.confirmPassword.touched">{{'USER.CONFIRM_PASSWORD_REQUIRED' | translate}}</mat-error>
+      </mat-form-field>
+      <div class="buttons">
+        <a routerLink="/signup" class="forgot">{{'HEADER.SIGN_UP' | translate}}</a>
+        <button class="btn big" type="submit" [disabled]="!responseReset.valid">{{'BUTTONS.CHANGE_PASSWORD' | translate}}</button>
+      </div>
+    </form>
+  </div>
+</div>

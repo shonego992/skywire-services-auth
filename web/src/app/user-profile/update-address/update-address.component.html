@@ -1,0 +1,13 @@
+<section class="updateAddress">
+  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" [formGroup]="updateAddress" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input
+      type="text"
+      matInput
+      placeholder="{{'USER.ADDRESS' | translate}}"
+      formControlName="skycoinAddress">
+      <mat-error *ngIf="updateAddress.controls.skycoinAddress.errors?.required && updateAddress.controls.skycoinAddress.touched">Your address is required</mat-error>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary" [disabled]="!updateAddress.valid">{{'BUTTONS.SUBMIT' | translate}}</button>
+  </form>
+</section>

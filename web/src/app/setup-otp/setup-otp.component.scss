@@ -1,0 +1,74 @@
+.card {
+  width: 50%;
+
+
+  @media (max-width: 1500px) {
+    width: 70%;
+  }
+
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1500px) {
+  .address {
+    width: 70%;
+  }
+}
+
+.imgCode {
+  flex-grow: 3;
+}
+
+.inputPart {
+  flex-grow: 2;
+}
+.setup {
+  display: flex;
+  align-items: flex-start;
+
+  @media (max-width: 930px) {
+    flex-direction: column;
+
+    .imgCode {
+      width: 100%;
+    }
+
+    form {
+      padding-left: 0 !important;
+      margin-top: 20px !important;
+    }
+  }
+
+  img {
+    width: 200px;
+    flex-shrink: 0;
+  }
+
+  form {
+    flex: 1;
+    padding-left: 20px;
+  }
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.address {
+  display: flex;
+
+  mat-form-field {
+    flex: 1;
+  }
+
+  button {
+    flex-shrink: 0;
+    margin-left: 10px;
+  }
+}

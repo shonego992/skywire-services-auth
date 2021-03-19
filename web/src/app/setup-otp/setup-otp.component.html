@@ -1,0 +1,55 @@
+<div class="card" *ngIf="!tokenSet">
+  <div class="header">
+    <div class="title">{{'OTP.TITLE' | translate}}</div>
+  </div>
+  <div class="body setup">
+    <div class="imgCode">
+      <img [src]="imageToShow" alt="optScan">
+      <div class="address">
+        <mat-form-field>
+          <input
+            type="text"
+            matInput
+            [placeholder]="Code"
+            [(ngModel)]="code"
+            #sharableLink
+            [readonly]="true"
+          />
+        </mat-form-field>
+        <button mat-icon-button color="primary" (click)="copyToClipboard(sharableLink)">
+          <mat-icon>file_copy</mat-icon>
+        </button>
+      </div>
+    </div>
+    <form class="mat-dialog-content inputPart" (ngSubmit)="submit" #formControl="ngForm">
+      <p>{{'OTP.SETUP' | translate}}</p>
+
+      <mat-form-field color="accent">
+        <input type="text" matInput [placeholder]="'OTP.TOKEN' | translate" name="token" [(ngModel)]="token" class="tokenInput">
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+
+      <button class="btn" (click)="saveOtp()" tabindex="-1">{{'OTP.CONFIRM' | translate}}</button>
+    </form>
+  </div>
+</div>
+
+<div class="card" *ngIf="tokenSet">
+  <div class="header">
+    <div class="title">{{'OTP.TITLE' | translate}}</div>
+  </div>
+  <div class="body">
+    <p>{{'OTP.ALREADY_SET' | translate}}</p>
+    <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
+      <mat-form-field color="accent">
+        <input type="password" matInput placeholder="Password" name="token" [(ngModel)]="password" class="tokenInput">
+      </mat-form-field>
+
+      <mat-form-field color="accent">
+        <input type="number" matInput placeholder="Token" name="token" [(ngModel)]="token" class="tokenInput">
+      </mat-form-field>
+
+      <button class="btn danger" (click)="disableOtp()" tabindex="-1">{{'OTP.DISABLE' | translate}}</button>
+    </form>
+  </div>
+</div>

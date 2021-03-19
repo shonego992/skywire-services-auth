@@ -1,0 +1,58 @@
+<img src="/assets/images/logo.png" alt="Skycoin">
+
+<mat-nav-list>
+  <a
+    mat-list-item
+    routerLink="/signup"
+    routerLinkActive="active"
+    *ngIf="!isAuth"
+    (click)="clicked()"
+  >
+    <mat-icon class="sidenav-icon">face</mat-icon><span class="nav-caption">{{'HEADER.SIGN_UP' | translate}}</span>
+  </a>
+  <a
+    mat-list-item
+    routerLink="/"
+    routerLinkActive="active"
+    *ngIf="!isAuth"
+    (click)="clicked()"
+  >
+    <mat-icon class="sidenav-icon">input</mat-icon><span class="nav-caption">{{'HEADER.LOGIN' | translate}}</span>
+  </a>
+  <a
+    mat-list-item
+    routerLink="/account-info"
+    routerLinkActive="active"
+    *ngIf="!(adminClaims.can_create || adminClaims.can_disable)"
+    (click)="clicked()"
+  >
+    <mat-icon class="sidenav-icon">supervisor_account</mat-icon><span class="nav-caption">{{ 'HEADER.ACCOUNT_INFO' | translate }}</span>
+  </a>
+  <a
+    mat-list-item
+    routerLink="/changing-password"
+    routerLinkActive="active"
+    *ngIf="!(adminClaims.can_create || adminClaims.can_disable)"
+    (click)="clicked()"
+  >
+    <mat-icon class="sidenav-icon">vpn_key</mat-icon><span class="nav-caption">{{ 'HEADER.CHANGING_PASSWORD' | translate }}</span>
+  </a>
+  <a
+    mat-list-item
+    routerLink="/admins-list"
+    routerLinkActive="active"
+    *ngIf="adminClaims.can_create || adminClaims.can_disable"
+    (click)="clicked()"
+  >
+    <mat-icon class="sidenav-icon">group</mat-icon><span class="nav-caption">{{ 'HEADER.ADMINS_LIST' | translate }}</span>
+  </a>
+  <a
+    mat-list-item
+    routerLink="/users-list"
+    routerLinkActive="active"
+    *ngIf="adminClaims.can_create || adminClaims.can_disable"
+    (click)="clicked()"
+  >
+    <mat-icon class="sidenav-icon">people_outline</mat-icon><span class="nav-caption">{{ 'HEADER.USERS_LIST' | translate }}</span>
+  </a>
+</mat-nav-list>
